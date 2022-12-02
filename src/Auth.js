@@ -20,12 +20,13 @@ export let AuthProvider = ({children}) => {
     }, []);
 
     let login = (user, token, role) => {
+        if (user != null){
         localStorage.setItem("token", JSON.stringify(token));
         localStorage.setItem("user", JSON.stringify(user));
         setUser(user);
+        console.log(user);
         setRole(role = user.role)
-        setToken(token);
-        // console.log(user.role);
+        setToken(token);}
 
     };
 

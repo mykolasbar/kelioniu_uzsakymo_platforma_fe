@@ -16,7 +16,7 @@ const Orders = () => {
         fetch("http://127.0.0.1:8000/api/orders/", {method: 'GET', headers: { 'Content-Type': 'application/json' }})
         .then(response => response.json())
         .then((result) => {setOrders(orders = result); console.log(orders)})
-    }, []);
+    }, [refresh]);
 
     let confirmReservation = (orderId, event) => {
         // event.preventDefault()
@@ -35,19 +35,18 @@ const Orders = () => {
 
     return (
         <>
-                <table className = "table-borderless m-2 w-75">
-                    <thead><tr><td>Visi užsakymai <span className = "text-primary">({orders.length})</span></td></tr></thead>
-                    <tbody>
-                    <tr><td><b>Vartotojas</b></td><td onClick={()=>sortByX()}><b>Viešbutis</b></td><td><b>Rezervacijos patvirtinimas</b></td></tr>
-                    {orders.map((order, index) => 
-                    <tr key = {order.id} style = {{fontSize: "1rem", height: "110px"}}> 
-                        <td>{order.user.name}</td>
-                        <td>{order.hotels.title}</td>
-                        <td>{(order.confirmed == 0) ? <td><input name = {order.id} type = "submit" value = "Patvirtinti užsakymą" className="btn btn-dark btn-sm m-2" onClick={(event) => {confirmReservation(order.id)}}></input></td> : <strong>Patvirtinta</strong>}</td>
-                        
-                    </tr>)}
-                    </tbody>
-                </table>
+            <table className = "table-borderless m-3 w-75">
+                <thead><tr><td>Visi užsakymai <span className = "text-primary">({orders.length})</span></td></tr></thead>
+                <tbody>
+                <tr><td><b>Vartotojas</b></td><td onClick={()=>sortByX()}><b>Viešbutis</b></td><td><b>Rezervacijos patvirtinimas</b></td></tr>
+                {orders.map((order, index) => 
+                <tr key = {order.id} style = {{fontSize: "1rem", height: "110px"}} className = "m-2"> 
+                    <td className = "m-2">{order.user.name}</td>
+                    <td className = "m-2">{order.hotels.title}</td>
+                    <td className = "m-2">{(order.confirmed == 0) ? <td><input name = {order.id} type = "submit" value = "Patvirtinti užsakymą" className="btn btn-dark btn-sm m-2" onClick={(event) => {confirmReservation(order.id)}}></input></td> : <strong>Patvirtinta</strong>}</td>    
+                </tr>)}
+                </tbody>
+            </table>
         </>
     );
 };

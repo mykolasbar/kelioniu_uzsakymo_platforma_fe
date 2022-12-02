@@ -14,6 +14,7 @@ import EditCountry from './editCountry';
 import EditHotel from './editHotel';
 import NewHotel from './newHotel';
 import Orders from './Orders';
+import Userorders from './Userorders';
 // import Protected from './protected';
 
 
@@ -23,7 +24,7 @@ function App() {
         <BrowserRouter>
         <AuthProvider>
           <Routes>
-            {/* <Route path="/" element={<Customer/>} /> */}
+            <Route path="/" element={<Customer/>} />
             <Route path='/customer' element={<Customer/>} />
             <Route path='/admin' element={<Admin/>}>
                 <Route path='edithotels' default element={<Hotels/>} />
@@ -33,13 +34,10 @@ function App() {
                 <Route index element={<Countries/>} />
             </Route>
             <Route path='editcountry/:id' element={<EditCountry/>} />
+            <Route path='myorders' element={<Userorders/>} />
             <Route path='edithotel/:id' element={<EditHotel/>} />
             <Route path='/login' element={<Login />} />
             <Route path='/register' element={<Register />} />
-            {/* <Route path='/restaurant/:id' element={<Restaurant />} />
-            <Route path='/editrestaurant/:id' element={<EditRestaurant />} />
-            <Route path='/meal/:id' element={<Getmeal />} /> */}
-            {/* <Route path='/about' element={<About />} /> */}
           </Routes>
         </AuthProvider>
       </BrowserRouter>

@@ -21,7 +21,7 @@ const Login = () => {
         .then(response => response.json())
         .then((response) => {
             console.log(response)
-            auth.login(response.user, response.token);
+            auth.login(response.user, response.token, response.user.role);
             if (response.user.role === "admin")
             navigate("/admin");
             if (response.user.role === "user")

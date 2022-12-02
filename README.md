@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+<h2>Description</h2>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A hotel management system with registered user and admin roles, in addition to unregistered user. UI in lithuanian. Functionality for viewing, searching and booking hotels on the user side and adding, removing and updating hotels, as well as confirming orders, on the admin side.
 
-## Available Scripts
+React.js used for frontend and Laravel for backend. Used token-based authentication with sanctum, in addition to protected routes on the frontend.
 
-In the project directory, you can run:
+This is the frontend repository. You can access the backend repository <a href = "https://github.com/mykolasbar/kelioniu_uzsakymo_platforma/">here</a>.
 
-### `npm start`
+<h2>Instructions for launch</h2>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<h2>Functionality</h2>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<ul>
+    <li>User roles:<li>
+        <ul>
+            <li>Unregistered user</li>
+            <li>Registered user</li>
+            <li>Admin</li>
+        </ul>
+    <li>Unregistered user:</li>
+        <ul>
+            <li>View hotels</li>
+            <li>Filter hotels by country</li>
+            <li>Search hotels by name</li>
+        </ul>
+    <li>Regular user:</li>
+        <ul>
+            <li>View hotels</li>
+            <li>Filter hotels by country</li>
+            <li>Search hotels by name</li>
+            <li>Book a hotel</li>
+        </ul>
+    <li>Admin</li>
+        <ul>
+            <li>Add, update, delete hotels</li>
+            <li>Add pictures for hotels</li>
+            <li>Add update, delete countries</li>
+            <li>See list of incoming bookings with user info</li>
+            <li>Confirm bookings</li>
+        </ul>
+</ul>
 
-### `npm test`
+<h2>Launch instructions</h2>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project is not deployed online, so in order to view it, you will have to download it from github and launch it on the live server.
 
-### `npm run build`
+<ul>
+    <li>Launch your apache server and MySQL</li>
+    <li>Clone or download the github repository</li>
+    <li>Import the database (Dump20221021 file in the downloaded repository) with MySQL Workbench or similar software</li>
+    <li>Launch the development server for the backup section on port http://127.0.0.1:8000/ (instructions <a href = "https://github.com/mykolasbar/kelioniu_uzsakymo_platforma">here</a>)</li>
+    <li>In case your do not have it, install npm (node package manager) and launch the development server from the app directory with your cli (npm start). The user page should load</li>
+    <li>To reach the admin section, register an account (http://localhost:3000/register) and login with your credentials</li>
+</ul>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Made by Mykolas Baranauskas. <a href = "https://www.linkedin.com/in/mykolas-baranauskas-b3809b110/" target = "_blank">Linkedin</a>.

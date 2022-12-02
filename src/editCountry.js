@@ -13,7 +13,7 @@ const EditCountry = () => {
 
     let handleSubmit = (event) => {
         event.preventDefault()
-        fetch("http://127.0.0.1:8000/api/updatecountry/" + id, {method: 'PUT', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(post)})
+        fetch("http://127.0.0.1:8000/api/school/" + id, {method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data)})
         .then(response => console.log(response))
         .then(() => {
             navigate("/admin");
@@ -32,7 +32,7 @@ const EditCountry = () => {
 
         <div className="d-flex aligns-items-center justify-content-center">
         <div className="card w-75 m-3">
-            <h2 className = "p-3">Taisyti šalies duomenis</h2>
+            <h2 className = "p-3">Įvesti šalies duomenis</h2>
             {<form onSubmit = { handleSubmit }>
                 <div className="form-group m-2">
                     <input className="form-control" type = "text" value = { post.name } name = "name" onChange={(event) => setPost({ ...post, name: event.target.value })}></input>
