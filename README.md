@@ -29,6 +29,7 @@ This is the frontend repository. You can access the backend repository <a href =
             <li>Filter hotels by country</li>
             <li>Search hotels by name</li>
             <li>Book a hotel</li>
+            <li>See status of hotel booking (confirmed or not)</li>
         </ul>
     <li>Admin</li>
         <ul>
